@@ -4,3 +4,12 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+database = { path = "../crates/core/database" }
+code = { path = "../crates/core/code" }
+
+serde = { workspace = true, features = ["derive"] }
+serde_yaml = { workspace = true }
+tracing = { workspace = true }
+dotenv = { workspace = true }
+actix-web = { workspace = true }
+clap = { workspace = true }
