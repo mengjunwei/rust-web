@@ -4,8 +4,9 @@ members = [
     "web",
     "crates/core/database",
     "crates/core/code",
-    "crates/core/logger"
-]
+    "crates/core/logger",
+    "crates/inject",
+    "crates/app_state"]
 [workspace.dependencies]
 # 日志
 log = "0.4"
@@ -72,4 +73,4 @@ nject = "0.4"
 dotenv = "0.15"
 num_cpus = "1.17"
 bytes = "1.10"
-clap="4.5"
+clap = "4.5"

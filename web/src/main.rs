@@ -1,7 +1,11 @@
 mod config;
+mod server;
 
+use app_state::AppState;
 use clap::{Arg, Command};
+use inject::InjectProvider;
 use std::fmt::Write;
+use std::sync::Arc;
 use tracing::info;
 
 #[actix_web::main]
@@ -44,5 +48,21 @@ async fn main() -> std::io::Result<()> {
     };
     let _guards = logger::Logger::build(&conf.logger).expect("初始化日志失败");
     info!("{:?}", conf);
+
+    let database_url = conf.mysql.write.dns();
+    let db_pool = database::Pool::new(database_url, conf.mysql.options.clone())
+        .await
+        .expect("初始化数据库失败");
+
+    let provider = InjectProvider::new(Arc::new(db_pool.clone()));
+    let provider = Arc::new(provider);
+    // 启动服务, 并阻塞
+
+    // 共享状态
+    let app_state = AppState {};
+    if let Err(e) = server::start(app_state, provider, conf).await {
+        panic!("server start faild. err: {e}");
+    }
+    info!("close service...");
     Ok(())
 }

@@ -7,6 +7,8 @@ edition = "2024"
 database = { path = "../crates/core/database" }
 code = { path = "../crates/core/code" }
 logger = { path = "../crates/core/logger" }
+inject = { path = "../crates/inject" }
+app_state = { path = "../crates/app_state" }
 
 serde = { workspace = true, features = ["derive"] }
 serde_yaml = { workspace = true }
@@ -14,3 +16,6 @@ tracing = { workspace = true }
 dotenv = { workspace = true }
 actix-web = { workspace = true }
 clap = { workspace = true }
+listenfd = { workspace = true }
+num_cpus = { workspace = true }
+colored = { workspace = true }
