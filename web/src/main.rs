@@ -2,6 +2,7 @@ mod config;
 
 use clap::{Arg, Command};
 use std::fmt::Write;
+use tracing::info;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
@@ -41,5 +42,7 @@ async fn main() -> std::io::Result<()> {
             panic!("配置文件加载失败, err: {err}")
         }
     };
+    let _guards = logger::Logger::build(&conf.logger).expect("初始化日志失败");
+    info!("{:?}", conf);
     Ok(())
 }

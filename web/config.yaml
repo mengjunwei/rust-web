@@ -49,7 +49,7 @@ sqlite:
 
 # 日志
 logger:
-  color_eyre: false # 彩色日志
+  color_eyre: true # 彩色日志
   console: # 终端配置
     level: "info" # 日志级别, debug/info/warn/error/panic
     enable: true # 是否启用，默认不启用

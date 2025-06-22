@@ -3,7 +3,8 @@ resolver = "3"
 members = [
     "web",
     "crates/core/database",
-    "crates/core/code"
+    "crates/core/code",
+    "crates/core/logger"
 ]
 [workspace.dependencies]
 # 日志

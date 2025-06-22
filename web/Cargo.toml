@@ -6,6 +6,7 @@ edition = "2024"
 [dependencies]
 database = { path = "../crates/core/database" }
 code = { path = "../crates/core/code" }
+logger = { path = "../crates/core/logger" }
 
 serde = { workspace = true, features = ["derive"] }
 serde_yaml = { workspace = true }

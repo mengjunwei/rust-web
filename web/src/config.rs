@@ -4,6 +4,7 @@ mod server;
 mod sqlite;
 
 use code::Error;
+use logger::config::Logger;
 use serde::{Deserialize, Serialize};
 use std::fs::read_to_string;
 use std::sync::OnceLock;
@@ -25,9 +26,9 @@ pub struct AppConfig {
     /// Mysql 数据库配置
     #[serde(default)]
     pub mysql: mysql::Mysql,
-    // /// 日志配置
-    // #[serde(default)]
-    // pub logger: Logger,
+    /// 日志配置
+    #[serde(default)]
+    pub logger: Logger,
 }
 
 pub fn init(path: &str) -> Result<AppConfig, Error> {
