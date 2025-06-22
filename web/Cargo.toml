@@ -9,6 +9,7 @@ code = { path = "../crates/core/code" }
 logger = { path = "../crates/core/logger" }
 inject = { path = "../crates/inject" }
 app_state = { path = "../crates/app_state" }
+services = { path = "../crates/services" }
 
 serde = { workspace = true, features = ["derive"] }
 serde_yaml = { workspace = true }

@@ -2,11 +2,11 @@
 
 use std::sync::Arc;
 
-use crate::{config::AppConfig};
+use crate::config::AppConfig;
+use crate::router;
 
-use app_state::{AppState};
+use app_state::AppState;
 use colored::Colorize;
-
 
 use inject::AInjectProvider;
 
@@ -27,6 +27,7 @@ pub async fn start(
             .app_data(web::Data::new(app_state.clone()))
             .app_data(web::Data::new(inject_provider.clone()))
             .app_data(web::Data::new(config_s.clone()))
+            .service(router::register())
     })
     // 保持连接打开状态以等待后续请求, 使用操作系统保持活动状态
     .keep_alive(KeepAlive::Os)

@@ -1,5 +1,6 @@
 mod config;
 mod server;
+mod router;
 
 use app_state::AppState;
 use clap::{Arg, Command};

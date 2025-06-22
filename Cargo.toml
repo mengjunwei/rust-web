@@ -10,8 +10,9 @@ members = [
     "crates/app_state",
     #    服务集
     "crates/services",
-    "crates/services/auth"
-, "crates/core/response"]
+    "crates/services/auth",
+    "crates/services/public"
+    , "crates/core/response"]
 [workspace.dependencies]
 # 日志
 log = "0.4"

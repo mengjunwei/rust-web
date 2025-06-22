@@ -5,3 +5,4 @@ edition = "2024"
 
 [dependencies]
 auth = { path = "auth" }
+public = { path = "public" }
