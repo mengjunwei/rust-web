@@ -1,0 +1,27 @@
+[package]
+name = "logger"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "logger"
+path = "src/lib.rs"
+
+[dependencies]
+database = { path = "../database" }
+
+tracing-appender = { workspace = true }
+tracing-error = { workspace = true }
+color-eyre = { workspace = true }
+tracing = { workspace = true }
+tracing-bunyan-formatter = { workspace = true }
+tracing-subscriber = { workspace = true, features = [
+    "env-filter",
+    "time",
+    "local-time",
+    "tracing-log",
+] }
+
+
+time = { workspace = true, features = ["macros"] }
+serde = { workspace = true, features = ["derive"] }
