@@ -2163,6 +2163,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "response"
+version = "0.1.0"
+dependencies = [
+ "actix-web",
+ "code",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "ring"
 version = "0.17.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"

@@ -168,3 +168,17 @@ impl From<io::Error> for Error {
         Error::Io(err)
     }
 }
+
+impl Error {
+    /// 返回错误码
+    pub fn code(&self) -> u16 {
+        unsafe {
+            let ptr = self as *const Error as *const u16;
+            ptr.read_volatile()
+        }
+    }
+    /// 返回错误码信息
+    pub fn msg(&self) -> String {
+        self.to_string()
+    }
+}

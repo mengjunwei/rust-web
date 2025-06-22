@@ -11,7 +11,7 @@ members = [
     #    服务集
     "crates/services",
     "crates/services/auth"
-]
+, "crates/core/response"]
 [workspace.dependencies]
 # 日志
 log = "0.4"
