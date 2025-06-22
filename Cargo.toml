@@ -5,8 +5,13 @@ members = [
     "crates/core/database",
     "crates/core/code",
     "crates/core/logger",
+    "crates/core/entity",
     "crates/inject",
-    "crates/app_state"]
+    "crates/app_state",
+    #    服务集
+    "crates/services",
+    "crates/services/auth"
+]
 [workspace.dependencies]
 # 日志
 log = "0.4"
